@@ -7,7 +7,8 @@ import About from './Pages/About';
 import Registration from './Pages/Registration';
 import AuthLayout from './Layouts/AuthLayout';
 import GuestLayout from './Layouts/GuestLayout';
-import React, { useState } from 'react';
+import React from 'react';
+import Dashboard from './Pages/Dashboard';
 
 
 function App() {
@@ -17,11 +18,12 @@ function App() {
       <Routes>
 
         <Route element={<AuthLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Route>
 
         <Route element={<GuestLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registration" element={<Registration />} />
         </Route>
